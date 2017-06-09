@@ -34,7 +34,13 @@
       </div>
       <p>Total = {{totalDepense}}</p>
     </div>
-    <button class="ui button green" @click.prevent='logOut'>Log Out</button>
+    <div class="ui segment">
+       <router-link :to="{ name: 'Detail'}">
+        <button class="ui button teal">Détail des Dépenses</button>         
+       </router-link>
+      <button class="ui button blue">Graph</button>     
+    </div>
+    <button class="ui button olive" @click.prevent='logOut'>Log Out</button>
   </div>
 
 
@@ -68,6 +74,7 @@ export default {
   },
   computed: {
     totalDepense() {
+      this.total = 0
       this.depenses.forEach((depense,i)=> {
         this.total += parseInt(depense.montant)
       })
@@ -76,11 +83,15 @@ export default {
   },
   methods: {
     addDepense() {
-      this.total += parseInt(this.newDepense.montant)
-      depensesRef.push(this.newDepense)
-      toastr.success('Dépense Ajouté')
-      this.newDepense.intitule = ''
-      this.newDepense.montant  = ''
+      if(this.newDepense.categorie != "" && this.newDepense.montant != "" && this.newDepense.intitule != "") {    
+          depensesRef.push(this.newDepense)
+          toastr.success('Dépense Ajouté')
+          this.newDepense.intitule = ''
+          this.newDepense.montant  = ''             
+      }
+      else {
+        toastr.warning('Un champ est vide')
+      }
     },
     logOut() {
       auth.signOut()

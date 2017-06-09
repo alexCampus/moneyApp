@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import Accueil from '@/components/Accueil'
+import Detail from '@/components/Detail'
 
 Vue.use(Router)
 
@@ -16,6 +17,12 @@ export default new Router({
       path: '/accueil',
       name: 'Accueil',
       component: Accueil
+    },
+    {
+      path: '/detail',
+      name: 'Detail',
+      component: Detail
     }
+
   ]
 })
