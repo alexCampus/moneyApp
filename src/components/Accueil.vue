@@ -8,7 +8,7 @@
       <span>{{moment().format('DD-MM-YYYY')}}</span>
     </div>
     <div class="ui massive form segment">
-      <div class="equal width inline fields">
+      <div class="">
         <div class="field">
           
           <select class="ui" v-model="newDepense.categorie">
@@ -34,13 +34,13 @@
       </div>
       <p>Total = {{totalDepense}}</p>
     </div>
-    <div class="ui segment">
+    <div class="ui massive segment">
        <router-link :to="{ name: 'Detail'}">
-        <button class="ui button teal">Détail des Dépenses</button>         
+        <button class="ui massive button teal">Détail des Dépenses</button>         
        </router-link>
-      <button class="ui button blue">Graph</button>     
+      <button class="ui massive button blue">Graph</button>     
     </div>
-    <button class="ui button olive" @click.prevent='logOut'>Log Out</button>
+    <button class="ui massive button olive" @click.prevent='logOut'>Log Out</button>
   </div>
 
 
@@ -111,6 +111,9 @@ export default {
 }
 </script>
 <style>
+body {
+  font-size: 4em;
+}
 .container {
   padding-top: 25%; 
 

@@ -1,21 +1,21 @@
 <template>
   <div class="ui middle aligned center aligned grid">
   <div class="column">
-    <form class="ui large form" >
+    <form class="ui massive form" >
       <div class="ui stacked segment">
         <div class="field">
-          <div class="ui left icon input">
+          <div class="ui left massive icon input">
             <i class="user icon"></i>
             <input type="text" name="email" placeholder="E-mail address" v-model="user.email">
           </div>
         </div>
         <div class="field">
-          <div class="ui left icon input">
+          <div class="ui left massive icon input">
             <i class="lock icon"></i>
             <input type="password" name="password" placeholder="Password" v-model="user.pass">
           </div>
         </div>
-        <div class="ui fluid large teal submit button" @click.prevent="loginUser">Login</div>
+        <div class="ui fluid massive teal submit button" @click.prevent="loginUser">Login</div>
       </div>
       <div class="ui error message"></div>
     </form>
@@ -64,8 +64,9 @@ export default {
 }
 </script>
 <style>
-    div.grid {
-     
+    input, div.button{
+     height: 250px;
+     text-align: center;
     }
     .column {
       margin-top: 25%;

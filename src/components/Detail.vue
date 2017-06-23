@@ -7,7 +7,7 @@
       <p>Gère tes dépenses quotidienne</p>
       <span>{{moment().format('DD-MM-YYYY')}}</span>
     </div>
-    <div class="ui large segment" v-for="depense of depenses">
+    <div class="ui massive segment" v-for="depense of depenses">
       
       <table class="ui inverted grey table">
         <thead>
@@ -30,13 +30,13 @@
       </table>      
       <div class="ui inverted divider"></div>
     </div>
-    <div class="ui segment">
+    <div class="ui massive segment">
        <router-link :to="{ name: 'Accueil'}">
-        <button class="ui button teal">Accueil</button>         
+        <button class="ui massive button teal">Accueil</button>         
        </router-link>
-      <button class="ui button blue">Graph</button>     
+      <button class="ui massive button blue">Graph</button>     
     </div>
-    <button class="ui button olive" @click.prevent='logOut'>Log Out</button>
+    <button class="ui massive button olive" @click.prevent='logOut'>Log Out</button>
   </div>
 
 
@@ -103,6 +103,9 @@ export default {
 }
 </script>
 <style>
+body {
+  font-size: 4em;
+}
 #cat {
   text-align: center;
   color: black;
